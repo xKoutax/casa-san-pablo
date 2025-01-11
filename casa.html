@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Pablo - Hospedaje</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        .product {
+            display: inline-block;
+            width: 48%;
+            margin: 1%;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        /* Estilo para el botón de WhatsApp */
+        .whatsapp-button {
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 30px auto;
+            background-color: #25d366;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* Estilo para los campos de Opiniones */
+        .opinion-form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .opinion-form input, .opinion-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .opinion-form input[type="file"] {
+            margin-top: 15px;
+        }
+
+        /* Estilo para el botón de donación */
+        .donation-button {
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 30px auto;
+            background-color: #e74c3c;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .gallery {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Bienvenidos a San Pablo Hospedaje</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="toggleSection('welcome')">Bienvenida</a></li>
+                <li><a href="#" onclick="toggleSection('gallery')">Galería</a></li>
+                <li><a href="#" onclick="toggleSection('opinions')">Opiniones</a></li>
+                <li><a href="#" onclick="toggleSection('location')">Ubicación</a></li>
+                <li><a href="#" onclick="toggleSection('reservation')">Reserva</a></li>
+                <li><a href="#" onclick="toggleSection('products')">Productos</a></li>
+                <li><a href="#" onclick="toggleSection('social-media')">Redes Sociales</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Bienvenida Section -->
+    <section id="welcome" class="active">
+        <h2>Bienvenidos a nuestro hospedaje</h2>
+        <p>Casa San Pablo es un espacio acogedor y sereno, ideal para el descanso y la reflexión. Rodeada de naturaleza, ofrece un ambiente cálido y tranquilo, perfecto para desconectar del estrés cotidiano. Con instalaciones diseñadas para el confort, invita a compartir momentos especiales en familia o con amigos. Su atmósfera única combina tradición y modernidad, creando una experiencia inolvidable.</p>
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/533151406.jpg?k=9f4bf8f819a822481eef767153a85125e9842f2971a87c1b99dd42506c710081&o=&hp=1" alt="Casa san pablo" style="width:100%; border-radius: 8px;">
+    </section>
+
+    <!-- Galería Section -->
+    <section id="gallery">
+        <h2>Galería</h2>
+        <p>Aquí puedes ver fotos y videos de nuestras instalaciones.</p>
+
+        <!-- Galería de Imágenes -->
+        <div class="gallery">
+            <h3>Imágenes</h3>
+            <div>
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/520634406.jpg?k=6b35abdcde4d2916c722057e220609886fd9d0a5002e80ebe1cca8f7793287c9&o=&hp=1" alt="Instalación 1" style="width:100%; border-radius: 8px;">
+                <p>Descripción: Esta es nuestra área de descanso, rodeada de naturaleza.</p>
+            </div>
+            <div>
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/520634395.jpg?k=dc4b8824a5786320aaa3307283abfa35dc0f5ca20f6e47b0d8bb861b99255291&o=&hp=1" alt="Instalación 2" style="width:100%; border-radius: 8px;">
+                <p>Descripción: Habitaciones cómodas y modernas para tu estadía.</p>
+            </div>
+        </div>
+
+        <!-- Galería de Videos -->
+       <div>
+    <h3>Videos</h3>
+    <div>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@casasanpablo17/video/7354650023679757574" data-video-id="7354650023679757574" style="max-width: 605px;min-width: 325px;" >
+            <section>
+                <a target="_blank" title="@casasanpablo17" href="https://www.tiktok.com/@casasanpablo17">@casasanpablo17</a>
+                <p>Un recorrido por nuestras instalaciones principales.</p>
+                <a target="_blank" title="TikTok" href="https://www.tiktok.com/">TikTok</a>
+            </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
+</div>
+
+
+        <div>
+    <h3>Videos</h3>
+    <div>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@casasanpablo17/video/7383167499312827654" data-video-id="7383167499312827654" style="max-width: 605px;min-width: 325px;">
+            <section>
+                <a target="_blank" title="@casasanpablo17" href="https://www.tiktok.com/@casasanpablo17">@casasanpablo17</a>
+                <p>Un recorrido por nuestras instalaciones principales.</p>
+                <a target="_blank" title="TikTok" href="https://www.tiktok.com/">TikTok</a>
+            </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
+</div>
+
+
+           <div>
+    <h3>Videos</h3>
+    <div>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@casasanpablo17/video/7352893358769065221" data-video-id="7352893358769065221" style="max-width: 605px; min-width: 325px;">
+            <section>
+                <a target="_blank" title="@casasanpablo17" href="https://www.tiktok.com/@casasanpablo17">@casasanpablo17</a>
+                <p>Un recorrido por nuestras instalaciones principales.</p>
+                <a target="_blank" title="TikTok" href="https://www.tiktok.com/">TikTok</a>
+            </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
+</div>
+
+        <!-- Botón de Donación -->
+      <a href="https://www.paypal.com/donate?business=andreschiquito1235@gmail.com" class="donation-button" target="_blank">Realiza una Donación</a>
+
+        <h2>Tu donación hace una diferencia significativa. Cada año, gracias a tu generosidad, podemos llenar de sonrisas y esperanza a los niños de la comuna de San Pablo. Tu apoyo les da la oportunidad de vivir momentos de felicidad, educación y sueños cumplidos. ¡Juntos estamos construyendo un futuro más brillante para ellos</h2>
+
+        <div>
+    <h3>Videos</h3>
+    <div>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@casasanpablo17/video/7452084746135309574" data-video-id="7452084746135309574" style="max-width: 605px; min-width: 325px;">
+            <section>
+                <a target="_blank" title="@casasanpablo17" href="https://www.tiktok.com/@casasanpablo17">@casasanpablo17</a>
+                <p>Un recorrido por nuestras instalaciones principales.</p>
+                <a target="_blank" title="TikTok" href="https://www.tiktok.com/">TikTok</a>
+            </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
+</div>
+<div>
+    <h3>Videos</h3>
+    <div>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@casasanpablo17/video/7452091814150049029" data-video-id="7452091814150049029" style="max-width: 605px; min-width: 325px;">
+            <section>
+                <a target="_blank" title="@casasanpablo17" href="https://www.tiktok.com/@casasanpablo17">@casasanpablo17</a>
+                <p>Un recorrido por nuestras instalaciones principales.</p>
+                <a target="_blank" title="TikTok" href="https://www.tiktok.com/">TikTok</a>
+            </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
+</div>
+
+<div>
+    <h3>Videos</h3>
+    <div>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@casasanpablo17/video/7452092434810506502" data-video-id="7452092434810506502" style="max-width: 605px; min-width: 325px;">
+            <section>
+                <a target="_blank" title="@casasanpablo17" href="https://www.tiktok.com/@casasanpablo17">@casasanpablo17</a>
+                <p>Un recorrido por nuestras instalaciones principales.</p>
+                <a target="_blank" title="TikTok" href="https://www.tiktok.com/">TikTok</a>
+            </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
+</div>
+<h2>Con tu apoyo, podemos llegar a más niños en situaciones vulnerables esta Navidad y brindarles esperanza, alegría y una sonrisa en estas fechas tan especiales</h2>
+
+    </section>
+
+    <!-- Opiniones Section -->
+    <section id="opinions">
+        <h2>Opiniones de nuestros huéspedes</h2>
+        <p>Lee lo que nuestros huéspedes tienen que decir.</p>
+        <p><strong>Juan Pérez:</strong> "Una experiencia maravillosa, todo muy cómodo y limpio." </p>
+        <p><strong>María López:</strong> "Recomiendo 100%, el servicio fue excelente." </p>
+        <!-- Botón de Telegram para compartir opiniones -->
+        <div class="opinion-form">
+            <h3>¡Déjanos tu opinión!</h3>
+            <a href="https://t.me/+rDN_uHoxrXgzZGJh" target="_blank" class="whatsapp-button" style="background-color: #0088cc;">Enviar Opinión en Telegram</a>
+        </div>
+    </section>
+
+<!-- Productos Section -->
+<section id="products">
+    <h2>Productos a la Venta</h2>
+
+    <style>
+        .product img {
+            width: 150px; /* Ajusta el ancho */
+            height: 150px; /* Ajusta la altura */
+            object-fit: cover; /* Asegura que la imagen se ajuste al cuadro */
+        }
+    </style>
+
+    <!-- Productos Alcohólicos -->
+    <h3>Productos Alcohólicos</h3>
+    <div class="product">
+        <img src="https://www.supermercadosantamaria.com/documents/10180/10504/28779_G.jpg" alt="Whisky">
+        <h3>Whisky</h3>
+        <p>Precio: $10.00</p>
+    </div>
+    <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_qoMw0sk0T7ciC-MOfWiKf515qCacU_9sxA&s" alt="Six de Corona">
+        <h3>Six de Corona</h3>
+        <p>Precio: $12.00</p>
+    </div>
+
+    <!-- Snacks -->
+    <h3>Snacks</h3>
+    <div class="product">
+        <img src="https://www.supermercadosantamaria.com/documents/10180/10504/75155_G.jpg" alt="Oreos">
+        <h3>Oreos</h3>
+        <p>Precio: $0.50</p>
+    </div>
+    <div class="product">
+        <img src="https://www.supermercadosantamaria.com/documents/10180/10504/27918_G.jpg" alt="Trian de Maíz">
+        <h3>Trian de Maíz</h3>
+        <p>Precio: $0.60</p>
+    </div>
+    <div class="product">
+        <img src="https://www.supermercadosantamaria.com/documents/10180/10504/27543_M.jpg" alt="Chupete">
+        <h3>Chupete</h3>
+        <p>Precio: $0.25</p>
+    </div>
+    <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa_qcGXwGBE-ez6BijW6JowhescIayfUzh5w&s" alt="Cereal">
+        <h3>Cereal</h3>
+        <p>Precio: $2.00</p>
+    </div>
+    <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6b6jYNS9moLb1CaFqxu8ffoHcbnYF2gGH5g&s" alt="Gelatoni">
+        <h3>Gelatoni</h3>
+        <p>Precio: $0.75</p>
+    </div>
+
+    <!-- Bebidas no Alcohólicas -->
+    <h3>Bebidas no Alcohólicas</h3>
+    <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrnyLVW6YTL_T51c6_nB3WYRlsSJVbY66hhg&s" alt="Leche de Frutas">
+        <h3>Leche de Frutas</h3>
+        <p>Precio: $4.50</p>
+    </div>
+    <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaOO7JSNQT4qWeTwUJfGCwt2JdvlecSB4b0g&s" alt="Leche Entera">
+        <h3>Leche Entera</h3>
+        <p>Precio: $1.25</p>
+    </div>
+    <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsruQaBamK7yfZj2LePFZeDfAOq9Fl9fPaRA&s" alt="Chocolatada">
+        <h3>Chocolatada</h3>
+        <p>Precio: $0.75</p>
+    </div>
+    <div class="product">
+        <img src="https://elbodegon.com.ec/cuenca/remigio-crespo/17-medium_default/coca-cola-3-litros.jpg" alt="Coca Cola">
+        <h3>Coca Cola</h3>
+        <p>Precio: $3.00</p>
+    </div>
+    <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxq37neSoD6VWPaMgod7Hs9g8XFkTsKd00QA&s" alt="Cola Tropical">
+        <h3>Cola Tropical</h3>
+        <p>Precio: $1.25</p>
+    </div>
+    <div class="product">
+        <img src="https://sumerlabs.com/default/image-tool-lambda?new-width=500&new-height=500&new-quality=50&url-image=https%3A%2F%2Fsumerlabs.com%2Fsumer-app-90b8f.appspot.com%2Fproduct_photos%252F9db380ea5b886789745a6a04080c0408%252F9b92d330-c6af-11ec-b2f3-cbbc9fa1cdf4%3Falt%3Dmedia%26token%3D8f490c77-b7c5-4fce-8fb4-988744567c54" alt="Pulp">
+        <h3>Pulp</h3>
+        <p>Precio: $1.50</p>
+    </div>
+</section>
+
+
+    <!-- Ubicación Section -->
+    <section id="location" style="text-align: center;">
+    <h2>Ubicación</h2>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31896.259091455016!2d-80.79253459582574!3d-2.141271561735217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902de05bdcc07753%3A0x9410d2e9d9d5b7ff!2sSan%20Pablo!5e0!3m2!1ses-419!2sec!4v1736524184318!5m2!1ses-419!2sec" 
+        width="80%" 
+        height="450" 
+        style="border: 0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
+
+
+    <!-- Reserva Section -->
+<section id="reservation">
+    <h2>Reserva tu estancia</h2>
+    <p>Haz tu reserva ahora y asegura tu lugar en San Pablo.</p>
+    <form id="reservation-form">
+        <label for="checkin">Fecha de Entrada:</label>
+        <input type="date" id="checkin" name="checkin" required>
+        <label for="checkout">Fecha de Salida:</label>
+        <input type="date" id="checkout" name="checkout" required>
+        <button type="button" onclick="submitReservation()">Reservar</button>
+    </form>
+    <!-- Botón de WhatsApp -->
+    <a id="whatsapp-button" href="#" target="_blank" class="whatsapp-button" style="display:none;">Contactar vía WhatsApp</a>
+</section>
+
+<script>
+    function submitReservation() {
+        // Obtener las fechas de entrada y salida
+        const checkin = document.getElementById('checkin').value;
+        const checkout = document.getElementById('checkout').value;
+
+        if (checkin && checkout) {
+            // Crear el mensaje de WhatsApp
+            const message = `Hola, me gustaría reservar una estancia en San Pablo. Fecha de Entrada: ${checkin}, Fecha de Salida: ${checkout}.`;
+
+            // Enlace de WhatsApp
+            const phoneNumber = '+593991919403'; // Reemplaza con tu número de WhatsApp
+            const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+            // Mostrar el botón de WhatsApp y redirigir
+            const whatsappButton = document.getElementById('whatsapp-button');
+            whatsappButton.href = whatsappLink;
+            whatsappButton.style.display = 'block'; // Mostrar el botón
+
+            // Opcional: Puedes redirigir automáticamente después de unos segundos
+            // window.location.href = whatsappLink; 
+        } else {
+            alert("Por favor, ingresa las fechas de entrada y salida.");
+        }
+    }
+</script>
+
+   <!-- Redes Sociales Section -->
+<section id="social-media">
+    <h2>Síguenos en Redes Sociales</h2>
+    <div class="social-links" style="text-align: center;">
+        <a href="https://www.tiktok.com/@casasanpablo17" target="_blank">
+            <button style="background-color: #4267B2; color: white; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer; font-size: 16px; margin: 5px;">
+                Tiktok
+            </button>
+        </a>
+        <a href="https://www.instagram.com/casasanpablo1/" target="_blank">
+            <button style="background-color: #E1306C; color: white; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer; font-size: 16px; margin: 5px;">
+                Instagram
+            </button>
+        </a>
+        <a href="https://www.youtube.com/@Vida_Sin_L%C3%ADmitesS2" target="_blank">
+            <button style="background-color: #1DA1F2; color: white; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer; font-size: 16px; margin: 5px;">
+                Youtube
+            </button>
+        </a>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 San Pablo Hospedaje. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section) => {
+                section.classList.remove('active');
+            });
+
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+    </script>
+</body>
+</html>
